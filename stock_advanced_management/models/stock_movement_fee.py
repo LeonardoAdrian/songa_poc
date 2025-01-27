@@ -2,7 +2,7 @@ from odoo import models, fields
 
 
 class StockMovementFee(models.Model):
-    _inherit = 'stock.movement.fee'
+    _name = 'stock.movement.fee'
     _description = 'Tarifas para movimientos de inventario'
 
     name = fields.Char(string='Nombre')

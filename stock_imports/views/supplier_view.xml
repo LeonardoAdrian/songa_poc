@@ -1,0 +1,63 @@
+<odoo>
+    <!-- Vista de formulario para el modelo stock.imports.supplier -->
+    <record id="view_stock_imports_supplier_form" model="ir.ui.view">
+        <field name="name">stock.imports.supplier.form</field>
+        <field name="model">stock.imports.supplier</field>
+        <field name="arch" type="xml">
+            <form string="Registro de Proveedores">
+                <sheet>
+                    <group string="Datos personales">
+                        <group>
+                            <field name="name"/>
+                            <field name="phone"/>
+                            <field name="email"/>
+                            <field name="website"/>
+                        </group>
+                        <group>
+                            <field name="supplier_code"/>
+                            <field name="supplier_type"/>
+                            <field name="currency_id"/>
+                        </group>
+                    </group>
+
+                    <group string="Información Financiera">
+                        <field name="payment_journal_id"/>
+                        <field name="bank_account_id"/>
+                        <field name="payment_term_id"/>
+                        <field name="credit_limit"/>
+                    </group>
+                    <group string="Información Logística">
+                        <!--  -->
+                        <field name="delivery_time"/>
+                        <field name="delivery_terms"/>
+                        <field name="delivery_address"/>
+                    </group>
+
+                    <group string="Información Adicional ">
+                        <field name="internal_notes"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista de árbol para el modelo stock.imports.supplier -->
+    <record id="view_stock_imports_supplier_tree" model="ir.ui.view">
+        <field name="name">stock.imports.supplier.tree</field>
+        <field name="model">stock.imports.supplier</field>
+        <field name="arch" type="xml">
+            <tree string="Gestion de Proveedores">
+                <field name="name"/>
+                <field name="supplier_code"/>
+                <field name="supplier_type"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Acción de ventana para el modelo stock.imports.supplier -->
+    <record id="action_stock_imports_supplier" model="ir.actions.act_window">
+        <field name="name">Gestion de Proveedores</field>
+        <field name="res_model">stock.imports.supplier</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

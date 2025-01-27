@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="stock_movement_arancel_action" model="ir.actions.act_window">
+        <field name="name">Aranceles</field>
+        <field name="res_model">stock.movement.arancel</field>
+        <field name="view_id" ref="stock_advanced_management.view_stock_movement_arancel_tree"/>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="stock_movement_fee_action" model="ir.actions.act_window">
+        <field name="name">Tarifas</field>
+        <field name="res_model">stock.movement.fee</field>
+        <field name="view_id" ref="stock_advanced_management.view_stock_movement_fee_tree"/>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- Menú principal para el módulo Stock Imports -->
+    <menuitem id="menu_stock_imports_root" name="Sistema de importaciones"
+              web_icon="stock_imports/static/description/importacion-y-exportacion.png" sequence="10">
+        <menuitem id="menu_stock_imports_supplier" name="Proveedores" action="action_stock_imports_supplier">
+        </menuitem>
+        <menuitem id="menu_stock_imports_history_root" name="Importaciones" action="action_stock_imports_history">
+        </menuitem>
+        <menuitem id="menu_stock_imports_arancel_root" name="Aranceles"
+                  action="stock_movement_arancel_action">
+        </menuitem>
+        <menuitem id="menu_stock_imports_tarifa_root" name="Tarifas"
+                  action="stock_movement_fee_action">
+        </menuitem>
+    </menuitem>
+
+    <!-- Submenú para el registro de proveedores -->
+
+</odoo>

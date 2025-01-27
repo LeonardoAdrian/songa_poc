@@ -5,7 +5,7 @@
     'author': "Inti Soluciones",
     'website': "www.intisoluciones.com",
     'version': '0.1',
-    'depends': ['stock', 'documents'],
+    'depends': ['stock', 'documents', 'stock_advanced_management'],
     'data': [
     ],
     'images': [

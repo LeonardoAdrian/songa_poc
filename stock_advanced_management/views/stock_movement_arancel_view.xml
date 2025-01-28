@@ -8,6 +8,7 @@
                 <field name="name"/>
                 <field name="tasa"/>
                 <field name="fecha_vigencia"/>
+                <field name="category_id"/>
                 <field name="active"/>
             </tree>
         </field>
@@ -25,6 +26,7 @@
                         <field name="tasa"/>
                         <field name="fecha_vigencia"/>
                         <field name="movement_type"/>
+                        <field name="category_id"/>
                         <field name="active"/>
                     </group>
                 </sheet>

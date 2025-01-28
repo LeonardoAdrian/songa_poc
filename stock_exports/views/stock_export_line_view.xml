@@ -12,7 +12,6 @@
                         <field name="weight"/>
                         <field name="volume"/>
                         <field name="price"/>
-                        <field name="exports_fee_ids" widget="many2many_tags"/>
                     </group>
                 </sheet>
             </form>
@@ -25,8 +24,10 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="product_id"/>
+                <field name="arancel_id" readonly="True"/>
                 <field name="weight"/>
                 <field name="volume"/>
+                <field name="price"/>
             </tree>
         </field>
     </record>

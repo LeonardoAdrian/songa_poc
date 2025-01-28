@@ -4,7 +4,8 @@
     <menuitem id="stock_exports_menu" name="Exportaciones" web_icon="stock_exports/static/description/exporting.png" sequence="5">
         <menuitem id="stock_exports_submenu_exports" name="Exportaciones" action="action_stock_export"/>
         <menuitem id="stock_exports_submenu_clients" name="Clientes" action="action_stock_clients_view"/>
-        <menuitem id="stock_exports_submenu_fees" name="Aranceles" action="action_stock_fee_view"/>
-        <menuitem id="stock_exports_submenu_fees1" name="Tarifas" action="action_stock_tarifa_view"/>
+        <menuitem id="stock_exports_submenu_transportes" name="Transportes" action="action_stock_transporte_view"/>
+        <menuitem id="stock_exports_submenu_fee" name="Tarifa" action="action_stock_fee_view"/>
+        <menuitem id="stock_exports_submenu_arancel" name="Aranceles" action="action_stock_arancel_view"/>
     </menuitem>
 </odoo>

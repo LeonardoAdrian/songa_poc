@@ -7,9 +7,9 @@ class StockTransportType(models.Model):
 
     partner_id = fields.Many2one(
         comodel_name='res.partner',
-        string='Categoria',
+        string='Proveedor de Transporte',
     )
 
     name = fields.Char(string='Nombre')
     maximum_weight_allowed = fields.Float(string='Peso Total (kg) permitido')
-    transport_fee = fields.Float(string='Costo del Transporte por kg')
+    transport_fee = fields.Float(string='Costo del Transporte por km')

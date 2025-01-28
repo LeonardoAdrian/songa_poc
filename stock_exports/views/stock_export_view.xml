@@ -24,14 +24,24 @@
 
                     <group string="Transporte">
                         <field name="transport_type"/>
+                        <field name="distance"/>
                         <field name="departure_date"/>
                         <field name="arrival_date"/>
                         <field name="real_arrival_date"/>
                     </group>
 
                     <group string="Carga">
-                        <field name="total_weight"/>
-                        <field name="total_volume"/>
+                        <field name="total_weight" readonly="True"/>
+                        <field name="total_volume" readonly="True"/>
+                    </group>
+
+
+                    <group string="Tarifa">
+                        <field name="transport_fee"/>
+                    </group>
+
+                    <group string="Calculo final">
+                        <field name="total_price"/>
                     </group>
 
 

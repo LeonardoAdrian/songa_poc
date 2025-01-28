@@ -7,16 +7,21 @@
     </record>
 
     <record id="action_stock_fee_view" model="ir.actions.act_window">
-        <field name="name">Aranceles</field>
-        <field name="res_model">res.partner</field>
-        <field name="view_mode">tree,form</field>
-    </record>
-
-    <record id="action_stock_tarifa_view" model="ir.actions.act_window">
         <field name="name">Tarifas</field>
-        <field name="res_model">res.partner</field>
+        <field name="res_model">stock.movement.fee</field>
         <field name="view_mode">tree,form</field>
     </record>
 
+    <record id="action_stock_arancel_view" model="ir.actions.act_window">
+        <field name="name">Arancel</field>
+        <field name="res_model">stock.movement.arancel</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_stock_transporte_view" model="ir.actions.act_window">
+        <field name="name">Transporte</field>
+        <field name="res_model">stock.transport.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
 
 </odoo>

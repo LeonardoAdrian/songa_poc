@@ -1,0 +1,41 @@
+<odoo>
+    <!-- Vista de árbol para tarifas -->
+    <record id="view_stock_movement_fee_tree" model="ir.ui.view">
+        <field name="name">stock.movement.fee.tree</field>
+        <field name="model">stock.movement.fee</field>
+        <field name="arch" type="xml">
+            <tree string="Tarifas">
+                <field name="name"/>
+                <field name="costo"/>
+                <field name="category_id"/>
+                <field name="fecha_vigencia"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vista de formulario para tarifas -->
+    <record id="view_stock_movement_fee_form" model="ir.ui.view">
+        <field name="name">stock.movement.fee.form</field>
+        <field name="model">stock.movement.fee</field>
+        <field name="arch" type="xml">
+            <form string="Tarifa">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="costo"/>
+                        <field name="fecha_vigencia"/>
+                        <field name="movement_type"/>
+                        <field name="active"/>
+
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+
+
+
+</odoo>

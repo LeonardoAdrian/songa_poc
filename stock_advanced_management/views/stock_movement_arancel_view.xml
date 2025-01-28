@@ -1,0 +1,38 @@
+<odoo>
+    <!-- Vista de árbol para aranceles -->
+    <record id="view_stock_movement_arancel_tree" model="ir.ui.view">
+        <field name="name">stock.movement.arancel.tree</field>
+        <field name="model">stock.movement.arancel</field>
+        <field name="arch" type="xml">
+            <tree string="Aranceles">
+                <field name="name"/>
+                <field name="tasa"/>
+                <field name="fecha_vigencia"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vista de formulario para aranceles -->
+    <record id="view_stock_movement_arancel_form" model="ir.ui.view">
+        <field name="name">stock.movement.arancel.form</field>
+        <field name="model">stock.movement.arancel</field>
+        <field name="arch" type="xml">
+            <form string="Arancel">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="tasa"/>
+                        <field name="fecha_vigencia"/>
+                        <field name="movement_type"/>
+                        <field name="active"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+
+
+</odoo>

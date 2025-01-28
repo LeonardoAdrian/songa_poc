@@ -3,5 +3,5 @@ access_stock_movement_fee,access.stock.movement.fee,model_stock_movement_fee,,1,
 access_stock_movement_arancel,access.stock.movement.arancel,model_stock_movement_arancel,,1,1,1,1
 
 access_stock_movement_fee_category,access.stock.movement.fee.category,model_stock_movement_fee_category,,1,1,1,1
-
+access_stock_transport_type,access.stock.transport.type,model_stock_transport_type,,1,1,1,1
 

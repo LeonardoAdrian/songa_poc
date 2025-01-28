@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_stock_export_line_form" model="ir.ui.view">
+        <field name="name">stock.export.line.form</field>
+        <field name="model">stock.export.line</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="product_id"/>
+                        <field name="weight"/>
+                        <field name="volume"/>
+                        <field name="price"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_stock_export_line_tree" model="ir.ui.view">
+        <field name="name">stock.export.line.tree</field>
+        <field name="model">stock.export.line</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="product_id"/>
+                <field name="arancel_id" readonly="True"/>
+                <field name="weight"/>
+                <field name="volume"/>
+                <field name="price"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

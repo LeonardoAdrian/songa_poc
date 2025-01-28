@@ -9,6 +9,7 @@
     'data': [
         'views/stock_movement_arancel_view.xml',
         'views/stock_movement_fee_view.xml',
+        'views/stock_transport_type_view.xml',
         'security/ir.model.access.csv',
     ],
     'images': [
@@ -16,7 +17,7 @@
     ],
     'installable': True,
     'category': 'Inventario',
-    'application': True,
+    'application': False,
     'assets': {
     },
 }

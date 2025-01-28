@@ -11,4 +11,9 @@ class StockImportsArancel(models.Model):
     movement_type = fields.Selection([
         ('exportacion', 'Exportacion'),
         ('importacion', 'Importacion'),
-    ], string='Show status')
+    ], string='Tipo')
+
+    category_id = fields.Many2one(
+        comodel_name='product.category',
+        string='Aplicada a categoria',
+    )

@@ -7,9 +7,4 @@ class StockMovementFeeCategory(models.Model):
 
     name = fields.Char(string='Nombre')
 
-    fee_ids = fields.One2many(
-        comodel_name='stock.movement.fee',
-        inverse_name='category_id',
-        string='Tarifas & Aranceles',
-    )
 

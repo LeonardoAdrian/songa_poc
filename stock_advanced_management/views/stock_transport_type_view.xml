@@ -1,0 +1,33 @@
+<odoo>
+    <record id="view_stock_transport_type_tree" model="ir.ui.view">
+        <field name="name">stock.transport.type.tree</field>
+        <field name="model">stock.transport.type</field>
+        <field name="arch" type="xml">
+            <tree string="Transporte">
+                <field name="partner_id"/>
+                <field name="name"/>
+                <field name="maximum_weight_allowed"/>
+                <field name="transport_fee"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_stock_transport_type_form" model="ir.ui.view">
+        <field name="name">stock.transport.type.form</field>
+        <field name="model">stock.transport.type</field>
+        <field name="arch" type="xml">
+            <form string="Tarifa">
+                <sheet>
+                    <group>
+                        <field name="partner_id"/>
+                        <field name="name"/>
+                        <field name="maximum_weight_allowed"/>
+                        <field name="transport_fee"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+</odoo>

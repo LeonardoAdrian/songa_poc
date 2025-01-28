@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_stock_export_form" model="ir.ui.view">
+        <field name="name">stock.export.form</field>
+        <field name="model">stock.export</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="status" widget="statusbar"
+                           statusbar_visible="draft,confirmed,dispatching,in_transit,in_custom,delivered,canceled"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                    </group>
+
+                    <group string="Cliente y Destino">
+                        <field name="partner_id"/>
+                        <field name="country_id"/>
+                        <field name="country_code"/>
+                    </group>
+
+                    <group string="Transporte">
+                        <field name="transport_type"/>
+                        <field name="departure_date"/>
+                        <field name="arrival_date"/>
+                        <field name="real_arrival_date"/>
+                    </group>
+
+                    <group string="Carga">
+                        <field name="total_weight"/>
+                        <field name="total_volume"/>
+                    </group>
+
+
+                    <notebook>
+                        <page string="Productos a Exportar">
+                            <field name="stock_export_lines_ids"/>
+                        </page>
+                        <page string="Documentos Relacionados">
+                            <field name="tracking_document_name"/>
+                            <field name="tracking_document_file" filename="tracking_document_name"/>
+                        </page>
+                        <page string="Orden de Venta">
+                            <field name="sale_order_id"/>
+                        </page>
+                    </notebook>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_stock_export_tree" model="ir.ui.view">
+        <field name="name">stock.export.tree</field>
+        <field name="model">stock.export</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="country_id"/>
+                <field name="status"/>
+                <field name="departure_date"/>
+                <field name="arrival_date"/>
+                <field name="total_weight"/>
+                <field name="total_volume"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_stock_export" model="ir.actions.act_window">
+        <field name="name">Exportaciones</field>
+        <field name="res_model">stock.export</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

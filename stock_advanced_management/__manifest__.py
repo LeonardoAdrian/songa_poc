@@ -12,7 +12,7 @@
     ],
     'installable': True,
     'category': 'Inventario',
-    'application': True,
+    'application': False,
     'assets': {
     },
 }

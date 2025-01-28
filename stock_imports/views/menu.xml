@@ -17,14 +17,19 @@
               web_icon="stock_imports/static/description/importacion-y-exportacion.png" sequence="10">
         <menuitem id="menu_stock_imports_supplier" name="Proveedores" action="action_stock_imports_supplier">
         </menuitem>
+        <menuitem id="menu_stock_imports_arancel_tarifa_root" name="Aranceles y tarifas">
+            <menuitem id="menu_stock_imports_arancel_root" name="Aranceles"
+                      action="stock_movement_arancel_action">
+            </menuitem>
+            <menuitem id="menu_stock_imports_tarifa_root" name="Tarifas"
+                      action="stock_movement_fee_action">
+            </menuitem>
+
+        </menuitem>
         <menuitem id="menu_stock_imports_history_root" name="Importaciones" action="action_stock_imports_history">
         </menuitem>
-        <menuitem id="menu_stock_imports_arancel_root" name="Aranceles"
-                  action="stock_movement_arancel_action">
-        </menuitem>
-        <menuitem id="menu_stock_imports_tarifa_root" name="Tarifas"
-                  action="stock_movement_fee_action">
-        </menuitem>
+
+
     </menuitem>
 
     <!-- Submenú para el registro de proveedores -->

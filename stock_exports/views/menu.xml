@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <odoo>
-    <menuitem id="stock_exports_menu" name="Exportaciones" web_icon="stock_exports/static/description/exporting.png" sequence="5">
-        <menuitem id="stock_exports_submenu_exports" name="Exportaciones" action="action_stock_export"/>
-        <menuitem id="stock_exports_submenu_clients" name="Clientes" action="action_stock_clients_view"/>
-        <menuitem id="stock_exports_submenu_transportes" name="Transportes" action="action_stock_transporte_view"/>
-        <menuitem id="stock_exports_submenu_fee" name="Tarifa" action="action_stock_fee_view"/>
-        <menuitem id="stock_exports_submenu_arancel" name="Aranceles" action="action_stock_arancel_view"/>
+    <menuitem id="stock_exports_menu" name="Exportaciones" web_icon="stock_exports/static/description/exporting.png" sequence="10">
+        <menuitem id="stock_exports_submenu_clients" name="Clientes" action="action_stock_clients_view" sequence="6"/>
+        <menuitem id="stock_exports_submenu_transportes" name="Transportes" action="action_stock_transporte_view" sequence="7"/>
+        <menuitem id="menu_stock_imports_arancel_tarifa_root" name="Aranceles y tarifas" sequence="8">
+            <menuitem id="stock_exports_submenu_fee" name="Tarifa" action="action_stock_fee_view"/>
+            <menuitem id="stock_exports_submenu_arancel" name="Aranceles" action="action_stock_arancel_view" />
+        </menuitem>
+        <menuitem id="stock_exports_submenu_exports" name="Exportaciones" action="action_stock_export" sequence="9"/>
     </menuitem>
 </odoo>

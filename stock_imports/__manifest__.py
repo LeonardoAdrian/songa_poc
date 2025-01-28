@@ -10,6 +10,7 @@
     'data': [
         'views/supplier_view.xml',
         'views/imports_view.xml',
+        'views/import_line_view.xml',
         'views/menu.xml',
         'security/ir.model.access.csv',
     ],

@@ -7,9 +7,8 @@
             <tree string="Historial de Importaciones">
                 <field name="supplier_id"/>
                 <field name="import_date"/>
-                <field name="product_name"/>
-                <field name="quantity"/>
-                <field name="import_cost"/>
+                <field name="distance"/>
+                <field name="costo_total"/>
                 <field name="state"/>
             </tree>
         </field>
@@ -22,17 +21,21 @@
         <field name="arch" type="xml">
             <form string="Importaciones">
                 <sheet>
-                    <group>
+                    <group string="Informacion">
                         <field name="supplier_id"/>
                         <field name="import_date"/>
-                        <field name="product_name"/>
-                        <field name="quantity"/>
-                        <field name="import_cost"/>
-                         <field name="arancel_id"/>
-                        <field name="tarifa_id"/>
-                        <field name="costo_arancel" readonly="1"/>
-                        <field name="costo_tarifa" readonly="1"/>
-                        <field name="costo_total" readonly="1"/>
+                         <field name="transport_type"/>
+                        <field name="distance"/>
+                    </group>
+                    <group string="Productos">
+                        <field name="import_lines_ids"/>
+                    </group>
+                    <group string="Costos">
+                        <field name="costo_arancel" />
+                        <field name="costo_tarifa" />
+                        <field name="costo_total" />
+                    </group>
+                    <group string="Informacion adicional">
                         <field name="state"/>
                         <field name="notes"/>
                     </group>

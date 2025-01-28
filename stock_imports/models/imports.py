@@ -14,9 +14,14 @@ class StockImportsHistory(models.Model):
     )
     # Campos del historial de importaciones
     import_date = fields.Date(string='Fecha de Importación', required=True, default=fields.Date.today())
-    product_name = fields.Char(string='Producto Importado', required=True)
-    quantity = fields.Float(string='Cantidad', required=True)
-    import_cost = fields.Float(string='Costo de Importación', required=True)
+    import_lines_ids = fields.One2many(
+        comodel_name='stock.import.line',
+        inverse_name='import_id',
+        string='Productos a importar',
+    )
+
+    transport_type = fields.Many2one('stock.transport.type', string='Tipo de transporte')
+    distance = fields.Float(string='Distancia (km)')
     state = fields.Selection(
         [('draft', 'Borrador'), ('in_transit', 'En Tránsito'), ('received', 'Recibido'), ('cancelled', 'Cancelado')],
         string='Estado',
@@ -36,27 +41,24 @@ class StockImportsHistory(models.Model):
     )
 
     # Campos calculados para costos
-    costo_arancel = fields.Float(string='Costo de Arancel', compute='_compute_costos', store=True)
-    costo_tarifa = fields.Float(string='Costo de Tarifa', compute='_compute_costos', store=True)
-    costo_total = fields.Float(string='Costo Total', compute='_compute_costos', store=True)
+    costo_arancel = fields.Float(string='Costo de Arancel')
+    costo_tarifa = fields.Float(string='Costo de Tarifa')
+    costo_total = fields.Float(string='Costo Total')
+    @api.onchange('distance','transport_type')
+    def _compute_tarifa(self):
+        for record in self:
+            record.costo_tarifa = record.distance * record.transport_type.transport_fee
 
-    @api.depends('import_cost', 'arancel_id', 'tarifa_id')
+
+    @api.onchange('import_lines_ids')
     def _compute_costos(self):
         for record in self:
-            # Calcular costo de arancel
-            if record.arancel_id:
-                record.costo_arancel = record.import_cost * (record.arancel_id.tasa / 100)
-            else:
-                record.costo_arancel = 0
 
-            # Calcular costo de tarifa
-            if record.tarifa_id:
-                if record.tarifa_id.tipo_tarifa == 'fijo':
-                    record.costo_tarifa = record.tarifa_id.costo
-                else:
-                    record.costo_tarifa = record.import_cost * (record.tarifa_id.costo / 100)
-            else:
-                record.costo_tarifa = 0
+            total_cost_without_trasnport_fee = 0
 
-            # Calcular costo total
-            record.costo_total = record.import_cost + record.costo_arancel + record.costo_tarifa
+            for line in record.import_lines_ids:
+                total_cost_without_trasnport_fee += line.calculate_arancel_final_price()
+            record.costo_arancel = total_cost_without_trasnport_fee
+            transport_fee = record.distance * record.transport_type.transport_fee
+
+            record.costo_total = transport_fee + total_cost_without_trasnport_fee
